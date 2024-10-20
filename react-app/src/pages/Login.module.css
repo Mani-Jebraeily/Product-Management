@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap');
+*{
+    font-family: "Vazirmatn", sans-serif;
+}
+.title{
+    color:#282828;
+     font-weight:700 ;
+     font-size: 31px;
+     text-align: center;
+     margin: 4rem 0 7rem;
+}
+
+.container{
+    width: 460px;
+    height: 596px;
+    border-radius: 40px;
+    background-color:#FFFFFF ;
+    border: 1px solid #E4E4E4;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titleForm{
+    color: #282828;
+    font-weight: 500;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 4rem;
+
+}
+
+.logo{
+    align-items: center;
+    display: block;
+    margin:2rem auto  1rem;
+}
+
+.inputs{
+    background-color: #F2F2F2;
+    width: 400px;
+    height: 53px;
+    border-radius: 14px;
+    margin: 15px;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: right;
+    color: #28282880;
+    padding-right: 10px;
+    border: none;
+    box-sizing: border-box;
+
+}
+
+.btn{
+    width:400px ;
+    height: 53px;
+    background-color:#55A3F0;
+    border-radius: 15px;
+    color: #FFFFFF;
+    font-size:20px ;
+    font-weight: 600;
+    border: none;
+    margin: 15px;
+    cursor: pointer;
+}
+
+.link{
+    color:#3A8BED;
+    text-decoration: none;
+    width: 127px;
+    margin: 0 auto;
+    display: block;
+    margin-top: 2rem;
+   
+}
+
