@@ -1,22 +1,20 @@
-import Login from "./pages/Login"
-import SignIn from "./pages/SignIn"
-import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import ModalAdd from "./pages/ModalAdd"
+import ModalDelete from "./pages/ModalDelete"
+import ModalEdit from "./pages/ModalEdit"
+import Router from "./router"
+import ProductsList from "./pages/ProductsList"
+import TanstackQuery from "./providers/TanstackQuery"
 
 function App() {
 
   return (
     <>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<SignIn/>}/>
-        <Route path="Login" element={<Login/>}/>
-       
-
-      </Routes>
-
-
-    </BrowserRouter>
- 
+    {/* <ProductsList/> */}
+    <TanstackQuery>
+      <Router/>
+   </TanstackQuery>
+    
+   
     </>
   )
 }
