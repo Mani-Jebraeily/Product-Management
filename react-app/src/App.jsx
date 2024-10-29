@@ -9,10 +9,10 @@ function App() {
 
   return (
     <>
-    {/* <ProductsList/> */}
-    <TanstackQuery>
+    <ProductsList/>
+    {/* <TanstackQuery>
       <Router/>
-   </TanstackQuery>
+   </TanstackQuery> */}
     
    
     </>

@@ -6,10 +6,13 @@ import trash from '../assets/trash.png'
 import edit from '../assets/edit.png'
 import ModalAdd from './ModalAdd'
 import axios from 'axios'
+import ModalDelete from './ModalDelete'
+import ModalEdit from './ModalEdit'
 
 function ProductsList() {
   const [showModalAdd,setShowModalAdd]=useState(false)
   const [showModalDelete,setShowModalDelete]=useState(false)
+  const [showModalEdit,setShowModalEdit]=useState(false)
   const [data,setData]=useState([])
 
   useEffect(()=>{
@@ -27,6 +30,8 @@ function ProductsList() {
     <div className={styles.ContainerAddBtn}>
       <button className={styles.BtnAddProducts} onClick={()=>setShowModalAdd(true)}>افزودن محصول</button>
       {showModalAdd&&<ModalAdd setShowModalAdd={setShowModalAdd}/>}
+      {showModalDelete&&<ModalDelete setShowModalDelete={setShowModalDelete} />}
+      {showModalEdit&&<ModalEdit setShowModalEdit={setShowModalEdit} />}
       <div className={styles.rightSide}>
         <h1 className={styles.h1ProductManeger}>مدیریت کالا</h1>
         <img src={SettingIcon} alt="setting icon" className={styles.IconSetting} />
@@ -41,10 +46,11 @@ function ProductsList() {
         <p className={styles.hidenItem}>.</p>
         <p className={styles.hidenItem}>.</p>
         <p className={styles.hidenItem}>.</p>
-          <p className={styles.PtitleItem}>نام کالا</p>
-          <p className={styles.PtitleItem}>موجودی</p>
-          <p className={styles.PtitleItem}>قیمت</p>
           <p className={styles.PtitleItem}>شناسه کالا</p>
+          <p className={styles.PtitleItem}>قیمت</p>
+          <p className={styles.PtitleItem}>موجودی</p>
+          <p className={styles.PtitleItem}>نام کالا</p>
+
          
 
         </div>
@@ -53,13 +59,13 @@ function ProductsList() {
                 <div className={styles.item1}>
 
                      <div className={styles.rightItem}>
-                            <img  className={styles.iconsModal} src={trash} alt="trash icon" />
-                            <img  className={styles.iconsModal} src={edit} alt="edit icon" />
+                            <img  className={styles.iconsModal} src={trash} alt="trash icon"   onClick={()=>setShowModalDelete(true)}/>
+                            <img  className={styles.iconsModal} src={edit} alt="edit icon"  onClick={()=>setShowModalEdit(true)}/>
                       </div>
-                      <p className={styles.Pitem}>{item.id}</p>
-                      <p className={styles.Pitem}>هزار تومان{item.price}</p>
-                      <p className={styles.Pitem}>عدد{item.quantity}</p>
-                      <p className={styles.Pitem}>{item.name}</p>
+                      <p className={styles.Pitem} key={item.id}>{item.id}</p>
+                      <p className={styles.Pitem} key={item.id}>هزار تومان{item.price}</p>
+                      <p className={styles.Pitem} key={item.id}>{item.quantity}عدد</p>
+                      <p className={styles.Pitem} key={item.id}>{item.name}</p>
                  </div>
                  </>
                )}

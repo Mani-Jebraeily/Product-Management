@@ -1,7 +1,11 @@
 import React from 'react'
 import styles from './ModalEdit.module.css'
 
-function ModalEdit() {
+function ModalEdit({setShowModalEdit}) {
+  const editHandeler=()=>{
+    setShowModalEdit(false)
+
+  }
   return (
     <div className={styles.ModalBackDrop}>
     <div className={styles.Modal}>
@@ -16,8 +20,8 @@ function ModalEdit() {
        <input type="text" name="" id="" placeholder='fetch' className={styles.inputs}/>        
        
        <div className={styles.Buttons}>
-          <button className={styles.AddButton}>ثبت اطلاعات جدید</button>   
-          <button className={styles.CloseButton}>انصراف</button>   
+          <button className={styles.AddButton} onClick={editHandeler}>ثبت اطلاعات جدید</button>   
+          <button className={styles.CloseButton} onClick={()=>setShowModalEdit(false)}>انصراف</button>   
        </div>
         
     </div>

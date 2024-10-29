@@ -12,32 +12,32 @@ function SignIn() {
   const [confirmPassword,setConfirmPassword]=useState("")
   
   
-  // const registerHandeler=()=>{
-  //     axios.post("http://localhost:3000/auth/register",{username ,password})
-  //     .then((res)=>console.log(res))
-  //     setUsername("")
-  //     setPassword("")
-  //     setConfirmPassword("")
-  // }
+  const registerHandeler=()=>{
+      axios.post("http://localhost:3000/auth/register",{username ,password})
+      if(!username||!password)return alert("Username and Password is Necessary!!!")
+        if(password!==confirmPassword)return alert("Password Does Not Match!!!")
+      .then((res)=>console.log(res))
+      setUsername("")
+      setPassword("")
+      setConfirmPassword("")
+  }
 
   const {mutate}=useRegister()
 
-  const registerHandeler=(event)=>{
-    event.preventDefault();
-    // if(!username||!password)return alert("Username and Password is Necessary!!!")
-    // if(password!==confirmPassword)return alert("Password Does Not Match!!!")
+//   const registerHandeler=(event)=>{
+//     event.preventDefault();
+   
 
 
-    mutate({username,password},{onSuccess:(data)=>{
-      console.log(data)
-    },onError:error=>console.log(error.response.data.message)
+//     mutate({username,password},{onSuccess:(data)=>{
+//       console.log(data)
+//     },onError:error=>console.log(error.response.data.message)
   
-  })
-    // api.get("products")
-    setUsername("")
-    setPassword("")
-    setConfirmPassword("")
-}
+//   })
+//     setUsername("")
+//     setPassword("")
+//     setConfirmPassword("")
+// }
   return (
     <>
     <h1 className={styles.title}>بوت کمپ بوتواستارت</h1>
