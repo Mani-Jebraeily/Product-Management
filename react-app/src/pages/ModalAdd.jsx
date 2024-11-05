@@ -8,14 +8,24 @@ function ModalAdd({setShowModalAdd}) {
   const [name,setName]=useState("")
   const [quantity,setQuantity]=useState("")
   const [price,setPrice]=useState("")
-
-  const addItemHandeler=()=>{
-    axios.post("http://localhost:3000/products",{name,price,quantity})
-    .then((res)=>console.log(res))
+  const [apiMessage,setApiMessage]=useState("")
+  
+  const addItemHandeler= async()=>{
+    try{
+      const response= await  axios.post("http://localhost:3000/products",{name,price,quantity})
+      console.log(response.status)
     setName("")
     setQuantity("")
     setPrice("")
     setShowModalAdd(false)
+   
+    }catch(error){
+      alert("خطا رخ داده است!!!")
+      console.log("Error",error.message)
+      setShowModalAdd(false)
+
+    }
+   
   }
   return (
     <div className={styles.ModalBackDrop}>

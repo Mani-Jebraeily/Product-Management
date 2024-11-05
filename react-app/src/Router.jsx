@@ -13,7 +13,7 @@ function Router() {
         <Routes>
             <Route path="/" element={<SignIn/>}/>
             <Route path="Login" element={<Login/>}/>
-            <Route path="Products" element={<ProductsList/>}/>
+            <Route path="products" element={<ProductsList/>}/>
             <Route path="*" element={<NotFoundPage/>}/>
         </Routes>
     </BrowserRouter>

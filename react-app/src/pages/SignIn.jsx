@@ -13,30 +13,24 @@ function SignIn() {
   
   
   const registerHandeler=()=>{
-      axios.post("http://localhost:3000/auth/register",{username ,password})
-      if(!username||!password)return alert("Username and Password is Necessary!!!")
-        if(password!==confirmPassword)return alert("Password Does Not Match!!!")
+    if(!username||!password)return alert("Username and Password is Necessary!!!")
+      if(password!==confirmPassword)return alert("Password Does Not Match!!!")
+      axios.post("http://localhost:3000/auth/register",{username ,password}) 
       .then((res)=>console.log(res))
       setUsername("")
       setPassword("")
       setConfirmPassword("")
   }
 
-  const {mutate}=useRegister()
+//   const {mutate}=useRegister()
 
 //   const registerHandeler=(event)=>{
 //     event.preventDefault();
-   
-
-
 //     mutate({username,password},{onSuccess:(data)=>{
-//       console.log(data)
+//       console.log(data.data.message)
 //     },onError:error=>console.log(error.response.data.message)
   
 //   })
-//     setUsername("")
-//     setPassword("")
-//     setConfirmPassword("")
 // }
   return (
     <>
@@ -49,12 +43,12 @@ function SignIn() {
         <input type="password" name="" id="2" className={styles.inputs} value={password} onChange={(e)=>setPassword(e.target.value)} placeholder='رمز عبور'/><br />
         <input type="password" name="" id="3" className={styles.inputs} value={confirmPassword} onChange={(e)=>setConfirmPassword(e.target.value)} placeholder='تکرار رمز عبور'/><br />
 
-        <Link to=''>
-        <button onClick={registerHandeler} className={styles.btn} type="submit">ثبت نام</button>
+        <Link to='Login'>
+        <button onClick={registerHandeler}  className={styles.btn} type="submit">ثبت نام</button>
         </Link>
-
+     
         <br />
-        <Link to='./Login' className={styles.link}>
+        <Link to='Login' className={styles.link}>
         حساب کاربری دارید؟
         </Link>
       </form>

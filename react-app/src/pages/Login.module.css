@@ -53,6 +53,25 @@
 
 }
 
+.ErrorText{
+    color:#d62f48;
+    font-weight: 400;
+    font-size: 16px;
+    margin: -0.5rem auto;
+    display: block;
+    margin-top: 2rem;
+}
+
+.LoginText{
+    color:#65a85b;
+    font-weight: 400;
+    font-size: 16px;
+    margin: -0.5rem auto;
+    display: block;
+    margin-top: 2rem;
+
+}
+
 .btn{
     width:400px ;
     height: 53px;
@@ -72,7 +91,7 @@
     width: 127px;
     margin: 0 auto;
     display: block;
-    margin-top: 2rem;
+    margin-top: 1rem;
    
 }
 
